@@ -1,0 +1,18 @@
+/* 기본 레이아웃 — 다음 단계에서 게임 UI에 맞게 확장 예정 */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+  background: #f5f5f5;
+  color: #1a1a1a;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#app {
+  width: 100%;
+  max-width: 640px;
+  padding: 1rem;
+}

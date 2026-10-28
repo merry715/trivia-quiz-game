@@ -1,0 +1,364 @@
+{
+  "questions": [
+    {
+      "id": "hist-01",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "한반도 역사에서 최초로 세워진 국가는?",
+      "choices": ["고조선", "고구려", "신라", "백제"],
+      "answerIndex": 0,
+      "explanation": "단군왕검이 기원전 2333년에 세운 한반도 최초의 국가다."
+    },
+    {
+      "id": "hist-02",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "세종대왕이 훈민정음을 창제한 해는?",
+      "choices": ["1392년", "1443년", "1592년", "1446년"],
+      "answerIndex": 1,
+      "explanation": "훈민정음은 1443년 창제되었으며 1446년에 반포되었다."
+    },
+    {
+      "id": "hist-03",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "임진왜란을 일으킨 나라는?",
+      "choices": ["일본", "중국", "몽골", "여진"],
+      "answerIndex": 0,
+      "explanation": "1592년 도요토미 히데요시가 이끄는 일본군이 조선을 침략했다."
+    },
+    {
+      "id": "hist-04",
+      "category": "history",
+      "difficulty": "easy",
+      "question": "이순신 장군이 임진왜란에서 활용한 전함은?",
+      "choices": ["판옥선", "맹선", "거북선", "황포선"],
+      "answerIndex": 2,
+      "explanation": "철갑으로 덮인 거북선은 임진왜란 때 왜군 격파에 결정적 역할을 했다."
+    },
+    {
+      "id": "hist-05",
+      "category": "history",
+      "difficulty": "medium",
+      "question": "고려를 건국한 인물은?",
+      "choices": ["왕건", "궁예", "견훤", "장보고"],
+      "answerIndex": 0,
+      "explanation": "왕건은 918년 고려를 건국하고 936년 후삼국을 통일했다."
+    },
+    {
+      "id": "hist-06",
+      "category": "history",
+      "difficulty": "medium",
+      "question": "3·1 운동이 일어난 해는?",
+      "choices": ["1910년", "1907년", "1945년", "1919년"],
+      "answerIndex": 3,
+      "explanation": "1919년 3월 1일 독립선언서 낭독을 시작으로 전국에 퍼진 독립운동이다."
+    },
+    {
+      "id": "hist-07",
+      "category": "history",
+      "difficulty": "medium",
+      "question": "조선을 건국한 인물은?",
+      "choices": ["이성계", "이방원", "정도전", "왕건"],
+      "answerIndex": 0,
+      "explanation": "이성계는 1392년 고려를 멸하고 조선을 건국하여 태조가 되었다."
+    },
+    {
+      "id": "hist-08",
+      "category": "history",
+      "difficulty": "medium",
+      "question": "신라가 삼국 통일을 완성한 세기는?",
+      "choices": ["5세기", "6세기", "7세기", "8세기"],
+      "answerIndex": 2,
+      "explanation": "신라는 676년 당나라 세력을 몰아내며 삼국 통일을 완성했다."
+    },
+    {
+      "id": "hist-09",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "대한제국의 외교권을 박탈한 을사늑약이 체결된 해는?",
+      "choices": ["1907년", "1905년", "1895년", "1910년"],
+      "answerIndex": 1,
+      "explanation": "1905년 체결된 을사늑약으로 대한제국은 외교권을 박탈당했다."
+    },
+    {
+      "id": "hist-10",
+      "category": "history",
+      "difficulty": "hard",
+      "question": "현존하는 세계 최고(最古) 금속 활자 인쇄물은?",
+      "choices": ["직지심체요절", "팔만대장경", "조선왕조실록", "동의보감"],
+      "answerIndex": 0,
+      "explanation": "1377년 인쇄된 직지심체요절은 현존하는 세계 최고(最古) 금속 활자 인쇄물이다."
+    },
+    {
+      "id": "sci-01",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "물의 화학식은?",
+      "choices": ["H₂O", "CO₂", "O₂", "H₂"],
+      "answerIndex": 0,
+      "explanation": "물은 수소(H) 2개와 산소(O) 1개로 이루어진 분자다."
+    },
+    {
+      "id": "sci-02",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "태양계에서 가장 큰 행성은?",
+      "choices": ["토성", "목성", "천왕성", "해왕성"],
+      "answerIndex": 1,
+      "explanation": "목성은 태양계에서 가장 크고 무거운 행성이다."
+    },
+    {
+      "id": "sci-03",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "빛이 1초 동안 이동하는 거리는 약 몇 km인가?",
+      "choices": ["3만 km", "300만 km", "30만 km", "3,000 km"],
+      "answerIndex": 2,
+      "explanation": "진공에서 빛의 속도는 약 299,792km/s로 흔히 30만 km/s로 표현한다."
+    },
+    {
+      "id": "sci-04",
+      "category": "science",
+      "difficulty": "easy",
+      "question": "사람 몸에서 가장 넓은 기관은?",
+      "choices": ["간", "폐", "소장", "피부"],
+      "answerIndex": 3,
+      "explanation": "피부는 성인 기준 약 1.5~2㎡로 인체에서 가장 넓은 기관이다."
+    },
+    {
+      "id": "sci-05",
+      "category": "science",
+      "difficulty": "medium",
+      "question": "DNA 이중 나선 구조를 밝혀낸 과학자들은?",
+      "choices": ["왓슨과 크릭", "다윈과 멘델", "퀴리와 로런스", "파스퇴르와 코흐"],
+      "answerIndex": 0,
+      "explanation": "제임스 왓슨과 프랜시스 크릭이 1953년 DNA 이중 나선 구조를 발표했다."
+    },
+    {
+      "id": "sci-06",
+      "category": "science",
+      "difficulty": "medium",
+      "question": "식물 세포에서 광합성이 일어나는 소기관은?",
+      "choices": ["미토콘드리아", "엽록체", "핵", "리보솜"],
+      "answerIndex": 1,
+      "explanation": "엽록체는 빛 에너지를 화학 에너지로 전환해 포도당을 합성한다."
+    },
+    {
+      "id": "sci-07",
+      "category": "science",
+      "difficulty": "medium",
+      "question": "원소 주기율표를 최초로 만든 과학자는?",
+      "choices": ["다윈", "뉴턴", "멘델레예프", "패러데이"],
+      "answerIndex": 2,
+      "explanation": "드미트리 멘델레예프는 1869년 원소를 원자량 순으로 배열한 주기율표를 발표했다."
+    },
+    {
+      "id": "sci-08",
+      "category": "science",
+      "difficulty": "medium",
+      "question": "지구 대기에서 가장 큰 비율을 차지하는 기체는?",
+      "choices": ["질소", "산소", "이산화탄소", "아르곤"],
+      "answerIndex": 0,
+      "explanation": "지구 대기의 약 78%는 질소이며, 산소는 약 21%다."
+    },
+    {
+      "id": "sci-09",
+      "category": "science",
+      "difficulty": "hard",
+      "question": "아보가드로 수(상수)로 옳은 값은?",
+      "choices": ["6.02×10²⁰", "3.01×10²³", "1.38×10²³", "6.02×10²³"],
+      "answerIndex": 3,
+      "explanation": "아보가드로 수는 약 6.022×10²³으로, 물질 1몰에 포함된 입자의 수다."
+    },
+    {
+      "id": "sci-10",
+      "category": "science",
+      "difficulty": "hard",
+      "question": "광전 효과가 증명하는 빛의 성질은?",
+      "choices": ["입자성", "파동성", "굴절성", "편광성"],
+      "answerIndex": 0,
+      "explanation": "아인슈타인이 설명한 광전 효과는 빛이 광자(입자)처럼 행동함을 보여준다."
+    },
+    {
+      "id": "geo-01",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "대한민국의 수도는?",
+      "choices": ["서울", "부산", "인천", "대전"],
+      "answerIndex": 0,
+      "explanation": "서울은 대한민국의 수도이자 최대 도시다."
+    },
+    {
+      "id": "geo-02",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "세계에서 가장 넓은 대륙은?",
+      "choices": ["아프리카", "아시아", "유럽", "북아메리카"],
+      "answerIndex": 1,
+      "explanation": "아시아는 약 4,400만 ㎢로 전 세계 대륙 면적의 약 30%를 차지한다."
+    },
+    {
+      "id": "geo-03",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "나일강이 흐르는 대륙은?",
+      "choices": ["아시아", "유럽", "아프리카", "남아메리카"],
+      "answerIndex": 2,
+      "explanation": "나일강은 아프리카 북동부를 흘러 지중해로 빠져나간다."
+    },
+    {
+      "id": "geo-04",
+      "category": "geography",
+      "difficulty": "easy",
+      "question": "일본의 수도는?",
+      "choices": ["오사카", "교토", "요코하마", "도쿄"],
+      "answerIndex": 3,
+      "explanation": "도쿄는 일본의 수도이자 최대 도시다."
+    },
+    {
+      "id": "geo-05",
+      "category": "geography",
+      "difficulty": "medium",
+      "question": "세계에서 가장 높은 산은?",
+      "choices": ["에베레스트", "K2", "칸첸중가", "마칼루"],
+      "answerIndex": 0,
+      "explanation": "에베레스트산은 해발 8,849m로 세계 최고봉이다."
+    },
+    {
+      "id": "geo-06",
+      "category": "geography",
+      "difficulty": "medium",
+      "question": "유럽에서 영토 면적이 가장 큰 나라는?",
+      "choices": ["프랑스", "러시아", "독일", "스페인"],
+      "answerIndex": 1,
+      "explanation": "러시아는 유럽과 아시아에 걸쳐 있으며, 유럽 부분만으로도 최대 면적이다."
+    },
+    {
+      "id": "geo-07",
+      "category": "geography",
+      "difficulty": "medium",
+      "question": "아마존강 유역의 대부분이 속한 나라는?",
+      "choices": ["아르헨티나", "페루", "브라질", "콜롬비아"],
+      "answerIndex": 2,
+      "explanation": "아마존강 유역의 약 60%가 브라질 영토에 해당한다."
+    },
+    {
+      "id": "geo-08",
+      "category": "geography",
+      "difficulty": "medium",
+      "question": "세계에서 가장 작은 독립 국가는?",
+      "choices": ["바티칸", "모나코", "리히텐슈타인", "산마리노"],
+      "answerIndex": 0,
+      "explanation": "바티칸은 면적 0.44㎢, 인구 약 800명의 세계 최소 독립 국가다."
+    },
+    {
+      "id": "geo-09",
+      "category": "geography",
+      "difficulty": "hard",
+      "question": "카스피해의 지리학적 분류로 올바른 것은?",
+      "choices": ["바다", "만(灣)", "석호", "호수"],
+      "answerIndex": 3,
+      "explanation": "카스피해는 세계 최대의 내륙 수역으로, 이름과 달리 호수에 해당한다."
+    },
+    {
+      "id": "geo-10",
+      "category": "geography",
+      "difficulty": "hard",
+      "question": "국제 날짜변경선이 통과하는 바다는?",
+      "choices": ["대서양", "태평양", "인도양", "북극해"],
+      "answerIndex": 1,
+      "explanation": "날짜변경선은 경도 180도 부근의 태평양을 지나며 날짜가 바뀌는 기준이 된다."
+    },
+    {
+      "id": "gen-01",
+      "category": "general",
+      "difficulty": "easy",
+      "question": "올림픽 오륜기에 사용된 색상은 몇 가지인가?",
+      "choices": ["5가지", "4가지", "6가지", "3가지"],
+      "answerIndex": 0,
+      "explanation": "파랑·노랑·검정·초록·빨강 5색의 고리가 오대륙을 상징한다."
+    },
+    {
+      "id": "gen-02",
+      "category": "general",
+      "difficulty": "easy",
+      "question": "1년은 약 몇 주(週)인가?",
+      "choices": ["48주", "54주", "52주", "50주"],
+      "answerIndex": 2,
+      "explanation": "365일을 7로 나누면 52주 하루로 1년은 약 52주다."
+    },
+    {
+      "id": "gen-03",
+      "category": "general",
+      "difficulty": "easy",
+      "question": "표준 피아노의 건반 수는 몇 개인가?",
+      "choices": ["76개", "88개", "92개", "100개"],
+      "answerIndex": 1,
+      "explanation": "표준 피아노는 흰 건반 52개와 검은 건반 36개로 총 88개다."
+    },
+    {
+      "id": "gen-04",
+      "category": "general",
+      "difficulty": "easy",
+      "question": "축구 경기에서 한 팀의 출전 선수 수는?",
+      "choices": ["10명", "12명", "9명", "11명"],
+      "answerIndex": 3,
+      "explanation": "규정상 필드 위에서 뛰는 한 팀의 선수는 11명이다."
+    },
+    {
+      "id": "gen-05",
+      "category": "general",
+      "difficulty": "medium",
+      "question": "노벨상이 수여되지 않는 학문 분야는?",
+      "choices": ["수학", "물리학", "화학", "의학"],
+      "answerIndex": 0,
+      "explanation": "노벨상에 수학 부문은 없으며, 수학의 노벨상으로 불리는 필즈상이 그 역할을 한다."
+    },
+    {
+      "id": "gen-06",
+      "category": "general",
+      "difficulty": "medium",
+      "question": "국제연합(UN)의 공식 언어 수는?",
+      "choices": ["5개", "7개", "6개", "4개"],
+      "answerIndex": 2,
+      "explanation": "UN 공식 언어는 영어·프랑스어·러시아어·중국어·스페인어·아랍어 6개다."
+    },
+    {
+      "id": "gen-07",
+      "category": "general",
+      "difficulty": "medium",
+      "question": "성인 인체의 뼈는 약 몇 개인가?",
+      "choices": ["206개", "208개", "200개", "212개"],
+      "answerIndex": 0,
+      "explanation": "성인 기준 206개이며, 신생아는 약 270개로 성장하면서 뼈가 합쳐진다."
+    },
+    {
+      "id": "gen-08",
+      "category": "general",
+      "difficulty": "medium",
+      "question": "모스 경도 10으로 가장 단단한 자연 광물은?",
+      "choices": ["강옥", "다이아몬드", "황옥", "석영"],
+      "answerIndex": 1,
+      "explanation": "다이아몬드는 모스 경도 10으로 자연 광물 중 가장 단단하다."
+    },
+    {
+      "id": "gen-09",
+      "category": "general",
+      "difficulty": "hard",
+      "question": "빛의 삼원색(RGB)을 모두 합치면 나타나는 색은?",
+      "choices": ["검은색", "노란색", "흰색", "회색"],
+      "answerIndex": 2,
+      "explanation": "빛의 삼원색(빨강·초록·파랑)을 동시에 합치면 흰색이 된다."
+    },
+    {
+      "id": "gen-10",
+      "category": "general",
+      "difficulty": "hard",
+      "question": "이진법 숫자 1010을 십진법으로 변환하면?",
+      "choices": ["12", "8", "14", "10"],
+      "answerIndex": 3,
+      "explanation": "1×2³ + 0×2² + 1×2¹ + 0×2⁰ = 8+0+2+0 = 10이다."
+    }
+  ]
+}
