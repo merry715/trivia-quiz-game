@@ -495,3 +495,74 @@ body {
 .wrong-wrong   { color: var(--wrong-text); font-weight: 600; }
 .wrong-correct { color: var(--correct-text); font-weight: 600; }
 .wrong-expl    { color: var(--text-sub); line-height: 1.5; word-break: keep-all; }
+
+/* ── 스피드 모드 선택 버튼 ──────────────── */
+.btn-speed {
+  width: 100%;
+  padding: .85rem;
+  background: #f97316;
+  color: #fff;
+  border-radius: 12px;
+  font-size: .95rem;
+  font-weight: 700;
+  border: none;
+  min-height: 52px;
+  margin-top: .65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  cursor: pointer;
+  transition: background .15s, transform .1s;
+}
+.btn-speed:hover:not(:disabled)  { background: #ea6e0a; }
+.btn-speed:active:not(:disabled) { transform: scale(.97); }
+.btn-speed .mode-count { color: rgba(255,255,255,.8); font-size: .8rem; font-weight: 400; }
+
+/* ── 타이머 (스피드 모드) ────────────────── */
+.timer-text        { font-size: .85rem; font-weight: 700; color: var(--primary); white-space: nowrap; }
+.timer-text.hidden { display: none; }
+.timer-urgent      { color: var(--wrong) !important; animation: timer-pulse .5s infinite; }
+
+@keyframes timer-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: .45; }
+}
+
+.timer-bar-wrap        { height: 4px; background: var(--border); }
+.timer-bar-wrap.hidden { display: none; }
+.timer-bar {
+  height: 100%;
+  background: #f97316;
+  transition: width 1s linear;
+  width: 100%;
+}
+.timer-bar.timer-bar-urgent { background: var(--wrong); }
+
+/* ── 힌트 버튼 ───────────────────────────── */
+.btn-hint {
+  width: 100%;
+  margin-top: .6rem;
+  padding: .5rem .75rem;
+  background: #fefce8;
+  border: 2px solid #fde047;
+  border-radius: 10px;
+  font-size: .8rem;
+  font-weight: 600;
+  color: #854d0e;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-hint:hover:not(:disabled) { background: #fef08a; border-color: #eab308; }
+.btn-hint:disabled              { opacity: .35; cursor: not-allowed; }
+
+/* 힌트로 제거된 보기 */
+.btn-choice.hint-eliminated {
+  opacity: .2;
+  text-decoration: line-through;
+  pointer-events: none;
+}

@@ -12,16 +12,20 @@ let currentLbMode = 'all';
 
 /* ── 게임 상태 ───────────────────────────────────────── */
 const state = {
-  nickname:     '',
-  mode:         null,
-  questions:    [],
-  currentIndex: 0,
-  score:        0,
-  startTime:    null,
-  answered:     false,
-  answers:      [],       // {isCorrect, selectedText, correctText, question, explanation}
-  lastRecordId: null,     // 방금 저장한 기록 ID (순위표 강조용)
-  prevScreen:   null,     // 순위표·오답노트에서 돌아갈 화면
+  nickname:      '',
+  mode:          null,
+  questions:     [],
+  currentIndex:  0,
+  score:         0,
+  startTime:     null,
+  answered:      false,
+  answers:       [],       // {isCorrect, selectedText, correctText, question, explanation}
+  lastRecordId:  null,     // 방금 저장한 기록 ID (순위표 강조용)
+  prevScreen:    null,     // 순위표·오답노트에서 돌아갈 화면
+  isSpeedMode:   false,
+  timerInterval: null,
+  timeLeft:      15,
+  hintUsed:      false,
 };
 
 /* ── 셔플 / 문제 구성 ────────────────────────────────── */
@@ -44,10 +48,95 @@ function shuffleChoices(q) {
 }
 
 function buildQuestions(qs, mode) {
+  if (mode === 'speed') {
+    return shuffle(qs).slice(0, 10).map(q => ({ ...q, ...shuffleChoices(q) }));
+  }
   const pool = mode === 'all'
     ? CATEGORY_ORDER.flatMap(cat => shuffle(qs.filter(q => q.category === cat)))
     : shuffle(qs.filter(q => q.category === mode));
   return pool.map(q => ({ ...q, ...shuffleChoices(q) }));
+}
+
+/* ── 스피드 타이머 ───────────────────────────────────── */
+function updateTimerUI() {
+  const timerEl = document.getElementById('quiz-timer');
+  const barEl   = document.getElementById('timer-bar');
+  timerEl.textContent = `⏱ ${state.timeLeft}`;
+  barEl.style.width   = `${(state.timeLeft / 15) * 100}%`;
+  const urgent = state.timeLeft <= 5;
+  timerEl.classList.toggle('timer-urgent', urgent);
+  barEl.classList.toggle('timer-bar-urgent', urgent);
+}
+
+function startTimer() {
+  state.timeLeft = 15;
+  updateTimerUI();
+  state.timerInterval = setInterval(() => {
+    state.timeLeft--;
+    updateTimerUI();
+    if (state.timeLeft <= 0) {
+      stopTimer();
+      handleTimeout();
+    }
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(state.timerInterval);
+  state.timerInterval = null;
+}
+
+function handleTimeout() {
+  if (state.answered) return;
+  state.answered = true;
+
+  const q = state.questions[state.currentIndex];
+  state.answers.push({
+    isCorrect:    false,
+    selectedText: '(시간 초과)',
+    correctText:  q.shuffledChoices[q.shuffledAnswerIndex],
+    question:     q.question,
+    explanation:  q.explanation,
+  });
+
+  document.getElementById('quiz-score').textContent = `${state.score}점`;
+  document.getElementById('btn-hint').disabled = true;
+
+  document.querySelectorAll('.btn-choice').forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.shuffledAnswerIndex) btn.classList.add('correct');
+  });
+
+  const feedback  = document.getElementById('quiz-feedback');
+  feedback.className = 'feedback feedback-wrong';
+  feedback.querySelector('.feedback-icon').textContent    = '⏰';
+  feedback.querySelector('.feedback-verdict').textContent = '시간 초과!';
+  const answerEl = feedback.querySelector('.feedback-answer');
+  answerEl.textContent = `정답: ${q.shuffledChoices[q.shuffledAnswerIndex]}`;
+  answerEl.classList.remove('hidden');
+  feedback.querySelector('.feedback-explanation').textContent = q.explanation;
+  document.getElementById('btn-next').textContent =
+    state.currentIndex === state.questions.length - 1 ? '결과 보기' : '다음';
+
+  feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+/* ── 힌트 ────────────────────────────────────────────── */
+function useHint() {
+  if (state.hintUsed || state.answered) return;
+  state.hintUsed = true;
+
+  const q           = state.questions[state.currentIndex];
+  const wrongIdxs   = [0, 1, 2, 3].filter(i => i !== q.shuffledAnswerIndex);
+  const toEliminate = shuffle(wrongIdxs).slice(0, 2);
+
+  toEliminate.forEach(idx => {
+    const btn = document.querySelector(`.btn-choice[data-idx="${idx}"]`);
+    btn.disabled = true;
+    btn.classList.add('hint-eliminated');
+  });
+
+  document.getElementById('btn-hint').disabled = true;
 }
 
 /* ── localStorage ────────────────────────────────────── */
@@ -111,16 +200,27 @@ function renderQuestion() {
 
   document.getElementById('quiz-feedback').className = 'feedback hidden';
   state.answered = false;
+
+  // 힌트 버튼 초기화
+  state.hintUsed = false;
+  document.getElementById('btn-hint').disabled = false;
+
+  // 타이머 (스피드 모드)
+  stopTimer();
+  document.getElementById('quiz-timer').classList.toggle('hidden', !state.isSpeedMode);
+  document.getElementById('timer-bar-wrap').classList.toggle('hidden', !state.isSpeedMode);
+  if (state.isSpeedMode) startTimer();
 }
 
 /* ── 보기 선택 (F-05/06/07) ─────────────────────────── */
 function handleChoice(selectedIdx) {
   if (state.answered) return;
+  stopTimer();
   state.answered = true;
 
   const q         = state.questions[state.currentIndex];
   const isCorrect = selectedIdx === q.shuffledAnswerIndex;
-  if (isCorrect) state.score += 10;
+  if (isCorrect) state.score += state.hintUsed ? 5 : 10;
 
   // F-11 오답 노트용 기록
   state.answers.push({
@@ -132,6 +232,7 @@ function handleChoice(selectedIdx) {
   });
 
   document.getElementById('quiz-score').textContent = `${state.score}점`;
+  document.getElementById('btn-hint').disabled = true;
 
   document.querySelectorAll('.btn-choice').forEach((btn, i) => {
     btn.disabled = true;
@@ -175,7 +276,7 @@ function nextQuestion() {
 /* ── 결과 화면 (F-08/09) ─────────────────────────────── */
 function showResult() {
   const total   = state.questions.length;
-  const correct = state.score / 10;
+  const correct = state.answers.filter(a => a.isCorrect).length;
   const elapsed = state.startTime ? Math.floor((Date.now() - state.startTime) / 1000) : 0;
   const pct     = Math.round(correct / total * 100);
   const mins    = Math.floor(elapsed / 60);
@@ -376,6 +477,7 @@ function renderLeaderboard(mode) {
 
 /* ── F-12 다시 하기 ──────────────────────────────────── */
 function retryGame() {
+  stopTimer();
   state.questions    = buildQuestions(allQuestions, state.mode);
   state.currentIndex = 0;
   state.score        = 0;
@@ -410,9 +512,10 @@ function retryGame() {
   });
 
   /* F-02 모드 선택 */
-  document.querySelectorAll('.btn-mode, .btn-all').forEach(btn => {
+  document.querySelectorAll('.btn-mode, .btn-all, .btn-speed').forEach(btn => {
     btn.addEventListener('click', () => {
       state.mode         = btn.dataset.mode;
+      state.isSpeedMode  = btn.dataset.mode === 'speed';
       state.questions    = buildQuestions(allQuestions, state.mode);
       state.currentIndex = 0;
       state.score        = 0;
@@ -429,6 +532,9 @@ function retryGame() {
   document.querySelectorAll('.btn-choice').forEach(btn =>
     btn.addEventListener('click', () => handleChoice(Number(btn.dataset.idx)))
   );
+
+  /* 힌트 버튼 */
+  document.getElementById('btn-hint').addEventListener('click', useHint);
 
   /* F-06 다음 버튼 */
   document.getElementById('btn-next').addEventListener('click', nextQuestion);
