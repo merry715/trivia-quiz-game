@@ -31,10 +31,10 @@
       "id": "hist-04",
       "category": "history",
       "difficulty": "easy",
-      "question": "이순신 장군이 임진왜란에서 활용한 전함은?",
+      "question": "임진왜란 때 이순신 장군이 운용한 지붕 덮개를 씌운 돌격선은?",
       "choices": ["판옥선", "맹선", "거북선", "황포선"],
       "answerIndex": 2,
-      "explanation": "철갑으로 덮인 거북선은 임진왜란 때 왜군 격파에 결정적 역할을 했다."
+      "explanation": "거북선은 덮개로 상부를 덮은 특수 돌격선으로 판옥선과 함께 임진왜란에서 활약했다."
     },
     {
       "id": "hist-05",
@@ -103,7 +103,7 @@
       "id": "sci-02",
       "category": "science",
       "difficulty": "easy",
-      "question": "태양계에서 가장 큰 행성은?",
+      "question": "태양계에서 부피가 가장 큰 행성은?",
       "choices": ["토성", "목성", "천왕성", "해왕성"],
       "answerIndex": 1,
       "explanation": "목성은 태양계에서 가장 크고 무거운 행성이다."
@@ -121,10 +121,10 @@
       "id": "sci-04",
       "category": "science",
       "difficulty": "easy",
-      "question": "사람 몸에서 가장 넓은 기관은?",
+      "question": "외부 표면적 기준, 사람 몸에서 가장 큰 기관은?",
       "choices": ["간", "폐", "소장", "피부"],
       "answerIndex": 3,
-      "explanation": "피부는 성인 기준 약 1.5~2㎡로 인체에서 가장 넓은 기관이다."
+      "explanation": "피부는 외부 표면적 기준 성인 약 1.5~2㎡로 인체에서 가장 큰 기관이다."
     },
     {
       "id": "sci-05",
@@ -220,19 +220,19 @@
       "id": "geo-05",
       "category": "geography",
       "difficulty": "medium",
-      "question": "세계에서 가장 높은 산은?",
+      "question": "해발고도 기준 세계에서 가장 높은 산은?",
       "choices": ["에베레스트", "K2", "칸첸중가", "마칼루"],
       "answerIndex": 0,
-      "explanation": "에베레스트산은 해발 8,849m로 세계 최고봉이다."
+      "explanation": "에베레스트산은 해발 8,849m로 해발고도 기준 세계 최고봉이다."
     },
     {
       "id": "geo-06",
       "category": "geography",
       "difficulty": "medium",
-      "question": "유럽에서 영토 면적이 가장 큰 나라는?",
+      "question": "유럽에 영토를 둔 국가 중 전체 면적이 가장 넓은 나라는?",
       "choices": ["프랑스", "러시아", "독일", "스페인"],
       "answerIndex": 1,
-      "explanation": "러시아는 유럽과 아시아에 걸쳐 있으며, 유럽 부분만으로도 최대 면적이다."
+      "explanation": "러시아는 유럽과 아시아에 걸쳐 있으며, 유럽에 영토를 둔 국가 중 전체 면적이 가장 넓다."
     },
     {
       "id": "geo-07",
