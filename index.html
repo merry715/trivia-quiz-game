@@ -22,6 +22,7 @@
         <p class="hint">공백만으로는 시작할 수 없습니다</p>
       </div>
       <button id="btn-start" class="btn btn-primary" disabled>시작하기</button>
+      <button id="btn-start-leaderboard" class="btn btn-ghost">🏆 순위표 보기</button>
     </div>
   </section>
 
@@ -72,7 +73,6 @@
       <div class="progress-bar-wrap">
         <div id="progress-bar" class="progress-bar"></div>
       </div>
-
       <div class="quiz-body">
         <p id="quiz-question" class="question-text"></p>
         <div class="choices-grid">
@@ -81,8 +81,8 @@
           <button class="btn-choice" data-idx="2"></button>
           <button class="btn-choice" data-idx="3"></button>
         </div>
+        <p class="kb-hint">키보드 1~4: 보기 선택 &nbsp;|&nbsp; Enter: 다음</p>
       </div>
-
       <div id="quiz-feedback" class="feedback hidden">
         <div class="feedback-top">
           <span class="feedback-icon"></span>
@@ -95,27 +95,70 @@
     </div>
   </section>
 
-  <!-- ④ 결과 화면 (임시) -->
+  <!-- ④ 결과 화면 -->
   <section id="screen-result" class="screen">
     <div class="card result-card">
-      <div class="result-emoji">🎉</div>
+      <div id="result-emoji" class="result-emoji">🎉</div>
       <h2 class="section-title">퀴즈 완료!</h2>
       <p id="result-nickname" class="result-nickname"></p>
+
       <div class="result-stats">
         <div class="stat-box">
           <span class="stat-label">최종 점수</span>
           <span id="result-score" class="stat-value"></span>
         </div>
         <div class="stat-box">
-          <span class="stat-label">정답률</span>
-          <span id="result-rate" class="stat-value"></span>
+          <span class="stat-label">정답</span>
+          <span id="result-correct" class="stat-value"></span>
         </div>
         <div class="stat-box">
           <span class="stat-label">소요 시간</span>
           <span id="result-time" class="stat-value"></span>
         </div>
       </div>
-      <button id="btn-restart" class="btn btn-primary">다시 시작</button>
+
+      <!-- 전체 도전 카테고리별 정답률 -->
+      <div id="result-category-breakdown" class="category-breakdown hidden">
+        <h3 class="breakdown-title">카테고리별 정답률</h3>
+        <div id="breakdown-list"></div>
+      </div>
+
+      <p id="result-storage-warn" class="storage-warn hidden">
+        ⚠ 기록이 저장되지 않았습니다 (localStorage 사용 불가)
+      </p>
+
+      <!-- 액션 버튼 -->
+      <div class="result-actions-row">
+        <button id="btn-retry"       class="btn btn-secondary">🔄 다시 하기</button>
+        <button id="btn-wrong-notes" class="btn btn-secondary">📝 오답 노트</button>
+      </div>
+      <button id="btn-to-leaderboard" class="btn btn-secondary">🏆 순위표 보기</button>
+      <button id="btn-restart"        class="btn btn-primary">처음으로</button>
+    </div>
+  </section>
+
+  <!-- ⑤ 순위표 화면 -->
+  <section id="screen-leaderboard" class="screen">
+    <div class="card">
+      <h2 class="section-title">순위표 🏆</h2>
+      <div class="lb-tabs" role="tablist">
+        <button class="lb-tab active" data-mode="all"       role="tab">전체</button>
+        <button class="lb-tab"        data-mode="history"   role="tab">역사</button>
+        <button class="lb-tab"        data-mode="science"   role="tab">과학</button>
+        <button class="lb-tab"        data-mode="geography" role="tab">지리</button>
+        <button class="lb-tab"        data-mode="general"   role="tab">일반</button>
+      </div>
+      <div id="lb-content" class="lb-content" role="tabpanel"></div>
+      <button id="btn-lb-back" class="btn btn-secondary">← 돌아가기</button>
+    </div>
+  </section>
+
+  <!-- ⑥ 오답 노트 화면 -->
+  <section id="screen-wrong" class="screen">
+    <div class="card">
+      <h2 class="section-title">오답 노트 📝</h2>
+      <div id="wrong-list" class="wrong-list"></div>
+      <button id="btn-wrong-back" class="btn btn-secondary">← 돌아가기</button>
     </div>
   </section>
 
