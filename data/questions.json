@@ -148,10 +148,10 @@
       "id": "sci-07",
       "category": "science",
       "difficulty": "medium",
-      "question": "원소 주기율표를 최초로 만든 과학자는?",
+      "question": "1869년 원소를 원자량 순으로 배열해 현대 주기율표의 토대를 확립한 과학자는?",
       "choices": ["다윈", "뉴턴", "멘델레예프", "패러데이"],
       "answerIndex": 2,
-      "explanation": "드미트리 멘델레예프는 1869년 원소를 원자량 순으로 배열한 주기율표를 발표했다."
+      "explanation": "드미트리 멘델레예프는 1869년 원자량 기준 주기율표를 체계적으로 발표해 현대 주기율표의 기초를 세웠다."
     },
     {
       "id": "sci-08",
@@ -247,10 +247,10 @@
       "id": "geo-08",
       "category": "geography",
       "difficulty": "medium",
-      "question": "세계에서 가장 작은 독립 국가는?",
+      "question": "면적 기준 세계에서 가장 작은 독립 국가는?",
       "choices": ["바티칸", "모나코", "리히텐슈타인", "산마리노"],
       "answerIndex": 0,
-      "explanation": "바티칸은 면적 0.44㎢, 인구 약 800명의 세계 최소 독립 국가다."
+      "explanation": "바티칸은 면적 0.44㎢로 면적 기준 세계 최소 독립 국가다."
     },
     {
       "id": "geo-09",
@@ -359,6 +359,15 @@
       "choices": ["12", "8", "14", "10"],
       "answerIndex": 3,
       "explanation": "1×2³ + 0×2² + 1×2¹ + 0×2⁰ = 8+0+2+0 = 10이다."
+    },
+    {
+      "id": "hist-11",
+      "category": "history",
+      "difficulty": "medium",
+      "question": "1876년 조선과 일본이 체결한 최초의 근대적 불평등 조약은?",
+      "choices": ["한성 조약", "강화도 조약", "을사늑약", "한일 신협약"],
+      "answerIndex": 1,
+      "explanation": "강화도 조약(조일수호조규)은 1876년 체결된 조선 최초의 근대적 조약이자 불평등 조약이었다."
     }
   ]
 }

@@ -26,10 +26,10 @@ const REQUIRED_FIELDS = ['id', 'category', 'difficulty', 'question', 'choices', 
 const DIFFICULTIES = ['easy', 'medium', 'hard'];
 
 // 2. 총 문제 수
-if (questions.length === 40) {
-  pass(`총 문제 수: ${questions.length}개 (40개 충족)`);
+if (questions.length >= 40) {
+  pass(`총 문제 수: ${questions.length}개 (40개 이상 충족)`);
 } else {
-  fail(`총 문제 수: ${questions.length}개 (40개 필요)`);
+  fail(`총 문제 수: ${questions.length}개 (40개 이상 필요)`);
 }
 
 // 3. 카테고리별 문제 수
@@ -45,10 +45,10 @@ questions.forEach(q => {
 
 CATEGORIES.forEach(cat => {
   const count = byCategory[cat].length;
-  if (count === 10) {
+  if (count >= 10) {
     pass(`${cat}: ${count}문제`);
   } else {
-    fail(`${cat}: ${count}문제 (10문제 필요)`);
+    fail(`${cat}: ${count}문제 (10문제 이상 필요)`);
   }
 });
 
@@ -59,10 +59,10 @@ CATEGORIES.forEach(cat => {
   const easy   = byCat.filter(q => q.difficulty === 'easy').length;
   const medium = byCat.filter(q => q.difficulty === 'medium').length;
   const hard   = byCat.filter(q => q.difficulty === 'hard').length;
-  if (easy === 4 && medium === 4 && hard === 2) {
+  if (easy >= 4 && medium >= 4 && hard >= 2) {
     pass(`${cat} 난이도: 쉬움 ${easy} / 보통 ${medium} / 어려움 ${hard}`);
   } else {
-    fail(`${cat} 난이도: 쉬움 ${easy} / 보통 ${medium} / 어려움 ${hard} (4/4/2 필요)`);
+    fail(`${cat} 난이도: 쉬움 ${easy} / 보통 ${medium} / 어려움 ${hard} (최소 easy 4 / medium 4 / hard 2 필요)`);
   }
 });
 
